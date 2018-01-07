@@ -5,16 +5,22 @@
 <template>
   <view class="container">
     <view class="">musicList</view>
+    <defaultComponent />
   </view>
 </template>
 
 <script>
 import wepy from 'wepy'
+import defaultComponent from '../components/index/defaultComponent'
+
 
 export default class musicList extends wepy.page {
   config = {
     navigationBarTitleText: 'musicList'
   };
+  components = {
+    defaultComponent
+  }
   data = {
 
   };

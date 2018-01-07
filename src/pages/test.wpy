@@ -1,4 +1,4 @@
-<style lang="less">
+<style scoped>
   .userinfo {
     display: flex;
     flex-direction: column;

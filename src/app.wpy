@@ -1,24 +1,17 @@
-<style>
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-</style>
+<!-- <style src="common.css"></style> -->
+<!-- <style src="button.css"></style> -->
 
 <script>
 import wepy from 'wepy'
 import 'wepy-async-function'
+import 'promise-polyfill'
 
 export default class extends wepy.app {
   config = {
     pages: [
       'pages/index',
       'pages/recommend',
-      'pages/musicList',
+      // 'pages/musicList',
       'pages/search',
       'pages/my',
       'pages/play',
@@ -38,7 +31,7 @@ export default class extends wepy.app {
       'borderStyle': 'black',
       'list': [{
         'pagePath': 'pages/index',
-        'text': '发现音乐',
+        'text': '发现音乐'
         // 'iconPath': 'images/icon1.png',
         // 'selectedIconPath': 'images/icon4.png'
       }, {
@@ -76,7 +69,7 @@ export default class extends wepy.app {
     })
   }
 
-  async testAsync () {
+  async testAsync() {
     const data = await this.sleep(3)
     console.log(data)
   }

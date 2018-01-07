@@ -2,6 +2,8 @@ const path = require('path');
 var prod = process.env.NODE_ENV === 'production'
 
 module.exports = {
+  // output: 'dist',
+  // source: 'src',
   wpyExt: '.wpy',
   build: {
     web: {
@@ -29,6 +31,8 @@ module.exports = {
       sourceMap: true,
       presets: [
         'env'
+        // 'es2015',
+        // 'stage-1'
       ],
       plugins: [
         'transform-class-properties',
@@ -39,6 +43,22 @@ module.exports = {
     }
   },
   plugins: {
+     'uglifyjs': {
+            filter: /\.js$/,
+            config: {
+            }
+        },
+    'imagemin': {
+        filter: /\.(jpg|png|jpeg)$/,
+        config: {
+            'jpg': {
+                quality: 80
+            },
+            'png': {
+                quality: 80
+            }
+        }
+    }
   },
   appConfig: {
     noPromiseAPI: ['createSelectorQuery']
