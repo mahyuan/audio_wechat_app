@@ -1,0 +1,27 @@
+<style scoped>
+
+</style>
+
+<template>
+  <view class="container">
+    <view class="">search</view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+
+export default class search extends wepy.page {
+  config = {
+    navigationBarTitleText: '搜索'
+  };
+  data = {
+
+  };
+  methods = {
+  };
+  onLoad() {
+
+  };
+}
+</script>

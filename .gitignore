@@ -1,0 +1,8 @@
+dist
+node_modules
+.wepycache
+*.swp
+*.swo
+.vim.session
+package-lock.json
+isDebug.js

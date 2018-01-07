@@ -1,0 +1,27 @@
+<style scoped>
+
+</style>
+
+<template>
+  <view class="container">
+    <view class="">musicList</view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+
+export default class musicList extends wepy.page {
+  config = {
+    navigationBarTitleText: 'musicList'
+  };
+  data = {
+
+  };
+  methods = {
+  };
+  onLoad() {
+
+  }
+}
+</script>

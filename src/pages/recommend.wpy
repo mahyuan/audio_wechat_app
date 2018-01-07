@@ -1,0 +1,27 @@
+<style scoped>
+
+</style>
+
+<template>
+  <view class="container">
+    <view class="">hhh</view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+
+export default class myRecommend extends wepy.page {
+  config = {
+    navigationBarTitleText: '我的推荐'
+  };
+  data = {
+
+  };
+  methods = {
+  };
+  onLoad() {
+
+  }
+}
+</script>

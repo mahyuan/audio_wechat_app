@@ -1,0 +1,27 @@
+<style scoped>
+
+</style>
+
+<template>
+  <view class="container">
+    <view class="">my</view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+
+export default class my extends wepy.page {
+  config = {
+    navigationBarTitleText: '我的'
+  };
+  data = {
+
+  };
+  methods = {
+  };
+  onLoad() {
+
+  }
+}
+</script>

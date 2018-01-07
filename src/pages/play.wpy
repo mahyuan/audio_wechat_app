@@ -1,0 +1,28 @@
+<style scoped>
+
+</style>
+
+<template>
+  <view class="container">
+    <view class="">hhh</view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+
+export default class play extends wepy.page {
+  config = {
+    navigationBarTitleText: '播放'
+  };
+
+  data = {
+
+  };
+  methods = {
+  };
+  onLoad() {
+
+  }
+}
+</script>
