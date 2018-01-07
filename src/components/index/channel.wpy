@@ -1,4 +1,55 @@
-<style scoped style="less">
+<template>
+	<view @tap="tabClick({{index}})" class="tabWrap" style="width: 100%">
+		<view class="item">推荐音乐</view>
+		<view class="item">热歌榜</view>
+		<view class="item">搜索</view>
+	</view>
+	<view id="tabList" class="tabWrap"
+		wx:for="{{tablist}}"
+		wx:for-item="{{tabItem}}"
+		wx:for-index="{{index}}"
+		wx:key="{{tabitem.titel}}"
+		class="{{index===current ? 'tabitem tabitem_active' : 'tabitem'}}"
+		@tap="tabClick({{index}})"
+	>
+		{{tabItem.titel}}
+	</view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class channel extends wepy.component {
+	data = {
+
+	}
+
+	props = {
+		tablist: Array,
+		isTabListFixed: Boolean,
+		current: Number,
+	}
+
+	methods = {
+		tabClick(index) {
+			if (this.current !== index) {
+				this.$emit('changeChannel', index)
+			}
+		}
+	}
+
+	watch = {
+		tablist(newVal, oldVal) {
+			console.log(newVal, oldVal)
+		}
+	}
+
+	onLoad () {}  // 在Page和Component共用的生命周期函数
+
+    onShow () {}  // 只在Page中存在的页面生命周期函数
+}
+</script>
+
+<style scoped>
 .tabWrap{
 	display: flex;
 	justify-content: space-between;
@@ -14,50 +65,6 @@
 	color: #000;
 }
 .tabitem_active{
-	color: : red;
+	color: red;
 }
 </style>
-<template>
-	<view @tap="tabClick({{index}})" class="tabWrap" style="width: 100%">
-		<view class="item">推荐音乐</view>
-		<view class="item">热歌榜</view>
-		<view class="item">搜索</view>
-	</view>
-	<view id="tabList" class="tabWrap"
-		wx:for="{{tablist}}"
-		wx:for-item="{{tabItem}}"
-		wx:for-index="{{index}}"
-		wx:key="{{tabitem.titel}}"
-		class="{{index===current ? 'tabitem tabitem_active' : 'tabitem'}}"
-		@tap="tabClick({{index}})"
-		>
-		{{tabItem.titel}}
-	</view>
-</template>
-
-<script>
-import wepy from 'wepy'
-export default class channel extends wepy.component {
-	data = {
-
-	};
-	props = {
-		tablist: Array,
-		isTabListFixed: Boolean,
-		current: Number,
-	};
-	methods = {
-		tabClick(index) {
-			if(this.current !== index) {
-				this.$emit('changeChannel', index)
-			}
-		}
-	};
-	watch = {
-		tablist(newVal, oldVal) {
-			console.log(newVal, oldVal)
-		}
-	};
-	onLoad() {}
-}
-</script>

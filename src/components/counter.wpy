@@ -1,5 +1,5 @@
-<style lang="less">
-  .counter {
+<style style="less" scoped>
+ /* .counter {
     text-align: left;
     font-size: 12px;
   }
@@ -12,7 +12,7 @@
     &.green {
       color: green;
     }
-  }
+  }*/
 </style>
 <template>
   <view class="counter {{style}}">

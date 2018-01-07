@@ -44,14 +44,11 @@ export default {
 
 	},
 
-	async uid() {
+	/*async uid() {
 		const user = await wx.getStorage({key: KEY})
 
-		return user,data.token.splite(' ').[0]
-	}
+		return user,data.token.splite('').[0]
+	}*/
 
-
-
-	async uid() {},
 
 }

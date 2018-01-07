@@ -1,80 +1,98 @@
-<style style="less" scoped>
-#tab{
-  width: 100%;
-  background-color: #ccc;
-  /*height: 30rpx;*/
-}
-</style>
-
 <template>
-  <view class="container">
-    <view id="tab">
-      <tab :tablist.sync="channel"
-        :current.sync="current"
-        : isTabListFixed.sync="isTabListFixed"></tab>
+    <view id="app">
+        <channel id="tab" :tablist.sync="channel" :current.sync="current" :isTabListFixed.sync="isTabListFixed"></channel>
+        <musicList></musicList>
+
+        <!-- <repeat for="{{musicList}}" key="index" index="index" item="item" >
+            <MusicList  :mlist.sync="mlist"/>
+        </repeat> -->
     </view>
-    <div class="ct"></div>
-    <view class="">hhh</view>
-  </view>
 </template>
 
 <script>
 import wepy from 'wepy'
-// import http from 'http'
-// ximport qs from 'qs'
 import mixin from '../mixins/mixin'
 import channel from '../components/index/channel'
+import musicList from '../components/index/musicList'
 
-export default class index extends wepy.page {
-  config = {
-    navigationBarTitleText: '我的首页',
-    navigationBarBackgroundColor: '#e93d3b',
-    navigationBarTextStyle: '#fff'
-  };
 
-  mixin = [mixin];
-
-  data = {
-    tablist: {},
-    current: 0, // 当前选择的tab
-    channel: [], // tab数组
-    page_mark: 0,
-    scrollTop: 0, // 距顶的距离
-    loadding: true, // 加载动画
-    isNoMoreData: false, // 没有数据
-    isTabListFixed: false, // tab吸顶
-  };
-
-  components = {tab: channel}
-  methods ={
-  };
-  computed = {
-    currentChannel() {
-      return this.channel[this.current]
+export default class Index extends wepy.page {
+    config = {
+        navigationBarTitleText: '我的首页',
+        navigationBarBackgroundColor: '#e93d3b',
+        navigationBarTextStyle: '#fff'
     }
-  };
 
-  events = {
-    'changeChannel': async(index) => {
-      this.current = index
-      // this.page_mark = 0
-      // this.isNoMoreData = false
-      // this.loadding = true
-      // if(this.current === 0 ) {
-      //   this.page_mark = -1
-      // }
+    mixin = [mixin]
 
-      // const height = await this.querySwiperHeight()
-      // wepy.pageScrollTo({
-      //   scrollTop: ()
-      // })
-      this.$apply()
-      // this.fetch(true)
+    data = {
+        tablist: {},
+        current: 0, // 当前选择的tab
+        channel: [], // tab数组
+        page_mark: 0,
+        scrollTop: 0, // 距顶的距离
+        loadding: true, // 加载动画
+        isNoMoreData: false, // 没有数据
+        isTabListFixed: false, // tab吸顶
+        mlist: [
+            {name: "mhy"}
+        ]
+        // muList:[]
     }
-  };
 
-  onLoad() {
-    let resp = http(``)
-  }
+    components = { channel, musicList }
+
+    methods ={
+    }
+
+    computed = {
+        currentChannel() {
+            return this.channel[this.current]
+        }
+    }
+
+    events = {
+        'changeChannel': async(index) => {
+            this.current = index
+            this.page_mark = 0
+            this.isNoMoreData = false
+            this.loadding = true
+            if(this.current === 0 ) {
+                this.page_mark = -1
+            }
+                console.log(this)
+            const height = await this.querySwiperHeight()
+            wepy.pageScrollTo({
+                scrollTop: (height < this.scrollTop ? height : this.scrollTop)
+            })
+            this.$apply()
+            // this.fetch(true)
+        }
+    }
+
+    async onLoad() {
+    // let resp = http(``)
+    }
 }
+
 </script>
+
+<style lang="css">
+#app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+#tab{
+  width: 100%;
+  /*background-color: #ccc;*/
+  height: 30rpx;
+}
+/*
+#tab .tabitem_active{
+    color: red;
+}*/
+</style>

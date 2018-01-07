@@ -1,0 +1,43 @@
+<template>
+	<view class="container">
+		<view>这是什么</view>
+	</view>
+</template>
+<script>
+import wepy from 'wepy'
+
+export default class musicList extends wepy.component {
+	data = {
+
+	}
+
+	props = {
+		mlist: Array
+	}
+
+	methods = {
+
+	}
+
+	events = {
+
+	}
+
+	watch ={
+
+	}
+
+	//onLoad () {}  // 在Page和Component共用的生命周期函数
+
+    //onShow () {}  // 只在Page中存在的页面生命周期函数
+}
+</script>
+
+<style>
+.container{
+	display: block;
+	font-size: 20rpx;
+	/*color: red;*/
+	height: 30rpx;
+}
+</style>

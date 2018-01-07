@@ -1,4 +1,4 @@
-<style type="less">
+<style>
   .group {}
 </style>
 <template>
@@ -27,7 +27,7 @@
     }
     methods = {
       tap () {
-        this.grouplist.name = `Parent Random(${Math.random()})`
+        // this.grouplist.name = `Parent Random(${Math.random()})`
         console.log(`Clicked Group ${this.$index}, ID is ${this.grouplist.id}`)
       }
     }
