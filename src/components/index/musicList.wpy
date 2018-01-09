@@ -1,6 +1,6 @@
 <template>
 	<view class="container">
-		<view>这是什么</view>
+		<view></view>
 	</view>
 </template>
 <script>

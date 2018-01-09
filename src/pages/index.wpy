@@ -1,11 +1,10 @@
 <template>
     <view id="app">
         <channel id="tab" :tablist.sync="channel" :current.sync="current" :isTabListFixed.sync="isTabListFixed"></channel>
-        <musicList></musicList>
 
-        <!-- <repeat for="{{musicList}}" key="index" index="index" item="item" >
-            <MusicList  :mlist.sync="mlist"/>
-        </repeat> -->
+        <repeat for="{{musicList}}" key="index" index="index" item="item" >
+            <musicList :mlist.sync="mlist"></musicList>
+        </repeat>
     </view>
 </template>
 

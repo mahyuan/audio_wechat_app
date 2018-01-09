@@ -1,5 +1,5 @@
-<!-- <style src="common.css"></style> -->
-<!-- <style src="button.css"></style> -->
+<style src="./style/common.css"></style>
+<style src="./style/button.css"></style>
 
 <script>
 import wepy from 'wepy'
