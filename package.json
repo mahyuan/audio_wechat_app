@@ -1,5 +1,5 @@
 {
-  "name": "video_wechat_app",
+  "name": "audio_wechat_app",
   "version": "1.0.0",
   "description": "wechat app for music player",
   "main": "dist/app.js",
